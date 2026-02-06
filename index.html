@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, inital-scale=1.0">
+        <title>Palindrome Checker</title>
+    </head>
+    <body>
+        <h1>Palindrome Checker</h1>
+        <p>This tool checks if your word is a palindrome</p>
+        <input type="text" id="theWord">
+        <input type="button" value="Check Word" id="theButton">
+
+        <p id="theOutput"></p>
+
+        <script>
+            const wordElem = document.getElementById("theWord");
+            const btnElem = document.getElementById("theButton");
+            const  outElem = document.getElementById("theOutput");
+
+            btnElem.addEventListener("click", () => 
+            {checkPalindrome(wordElem.value)});
+
+            function checkPalindrome(word){
+                word = word.toLowerCase();
+                let output = "";
+                if (!word) {
+                    output = "Please enter a word"
+                } else {
+                    let reverseWord = word.split("").reverse().join("");
+                    if(word === reverseWord){
+                        output = `Yes, ${word} is a palindrome!` 
+                    } else {
+                            output = `Sorry ${word} is not a palindrome.`
+                        }
+                }
+                outElem.innerText = output;
+            }
+        </script>
+    </body>
+</html>
