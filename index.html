@@ -29,9 +29,9 @@
                 } else {
                     let reverseWord = word.split("").reverse().join("");
                     if(word === reverseWord){
-                        output = `Yes, ${word} is a palindrome!` 
+                        output = `Yes, ${reverseWord} is a palindrome!` 
                     } else {
-                            output = `Sorry ${word} is not a palindrome.`
+                            output = `Sorry ${reverseWord} is not a palindrome.`
                         }
                 }
                 outElem.innerText = output;
